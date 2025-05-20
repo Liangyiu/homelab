@@ -1,0 +1,14 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: helloworld2-ingress-route
+  namespace: default
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - match: Host(`helloworld2.kube.llama.onl`)
+    kind: Rule
+    services:
+    - name: nginx-service
+      port: 80
