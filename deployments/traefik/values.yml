@@ -1,0 +1,19 @@
+deployment:
+  kind: DaemonSet
+ingressRoute:
+  dashboard:
+    enabled: true
+    entryPoints:
+    - websecure
+    matchRule: Host(`traefik-dash.kube.llama.onl`)
+    middlewares:
+    - name: traefik-webui-middleware
+    tls:
+      secretName: traefik-dash-cert-secret
+ports:
+  web:
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
