@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: longhorn-ui-ingressroute-certificate
+  namespace: longhorn-system
+spec:
+  secretName: longhorn-ui-cert-secret
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
+  dnsNames:
+  - longhorn.kube.llama.onl

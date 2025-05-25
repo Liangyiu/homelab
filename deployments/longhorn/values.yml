@@ -1,0 +1,6 @@
+longhornUI:
+  replicas: 1
+persistence:
+  defaultNodeSelector:
+    enable: true
+    selector: "longhorn=true"

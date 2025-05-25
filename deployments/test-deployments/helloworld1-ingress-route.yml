@@ -7,8 +7,10 @@ spec:
   entryPoints:
   - websecure
   routes:
-  - match: Host(`helloworld2.kube.llama.onl`)
+  - match: Host(`helloworld1.kube.llama.onl`)
     kind: Rule
     services:
     - name: nginx-service
       port: 80
+  tls:
+    secretName: helloworld1-cert-secret
