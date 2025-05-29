@@ -6,3 +6,6 @@ persistence:
     selector: "longhorn=true"
 preUpgradeChecker:
   jobEnabled: false
+metrics:
+  serviceMonitor:
+    enabled: true
