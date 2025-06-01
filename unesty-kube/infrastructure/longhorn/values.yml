@@ -1,11 +1,15 @@
 longhornUI:
   replicas: 1
-persistence:
-  defaultNodeSelector:
-    enable: true
-    selector: "longhorn=true"
-preUpgradeChecker:
-  jobEnabled: false
-metrics:
-  serviceMonitor:
-    enabled: true
+# persistence:
+#   defaultNodeSelector:
+#     enable: true
+#     selector: "longhorn=true"
+# preUpgradeChecker:
+#   jobEnabled: false
+# metrics:
+#   serviceMonitor:
+#     enabled: true
+defaultBackupStore:
+  backupTarget: 's3://longhorn-backup@nas-llama/'
+  backupTargetCredentialSecret: minio-secret
+  pollIntervall: 300

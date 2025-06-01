@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pgadmin-configmap
+  namespace: pgadmin
+data:
+  PGADMIN_LISTEN_PORT: "3004"
